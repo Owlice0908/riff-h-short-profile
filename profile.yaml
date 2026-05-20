@@ -1,0 +1,207 @@
+# ヒカル切り抜き (H-Short) プロファイル
+name: "ヒカル切り抜き H-Short"
+description: "YouTuberヒカルの切り抜きショート構成案ディレクター"
+language: ja
+version: "1.0"
+
+# レンダリング設定（composer.py の compose_from_cuts_hshort を駆動）
+render:
+  mode: hshort                    # ⭐ 通常生成時に自動的にh-shortレンダラーを使用
+  title_default_font_size: 130
+  title_color: "#FFE600"          # 黄色（ヒカル風洗練）
+  footer_lines:
+    - "元動画は概要欄から"
+    - "チャンネル登録お願いします"
+
+# ミッション
+mission:
+  goal: "ヒカル切り抜きで月100万再生・3ヶ月で登録者1000-3000人到達"
+  audience: "20-40代男性、ヒカル系YouTube視聴者、エンタメ/お金/恋愛系に関心"
+  pace: "週3-5本"
+  voice: "ヒカル本人の生音声切り抜き＋タイトル+フッターの固定フレーム。テロップは最小限"
+  reference_competitor: "emooon (@hikarunoitigeki) 59,200サブ / ヒカル切り抜きくん 378サブ"
+
+# Whisper認識精度向上ヒント
+whisper_hints: >
+  ヒカル、進撃のノア、加藤神楽、Hakuくん、ハクくん、
+  ネクステ、相馬トランジスタ、まえっさん、名人、カツヤ、
+  飯田祐基、カジサック、はじめしゃちょー、エミリン、てんちむ、
+  ラファエル、シバター、青柳、カルビ、ロケマサ、
+  ReZARD、リザード、ミステリー、マーダーミステリー、ライバー、
+  オープンマリッジ、債務超過、赤字倒産、株主、
+  カノックスター、かのくん、かの、丸ごと、スイカゼリー、コラボ
+
+# 切り抜き許可チャンネル（厳守）
+permitted_channels:
+  - handle: "@hikaruYouTube"
+    name: "ヒカル(Hikaru)"
+    notes: "メインch・ビジネス/エンタメ"
+  - handle: "@HikaruGames"
+    name: "ヒカルゲームズ"
+    notes: "ゲーム実況・雑談"
+  - handle: "@kanockstar"
+    name: "かの/カノックスター"
+    notes: "220万登録・本人が公認切り抜きch紹介(c8Zv0cc2dzM)・emooon等の競合も切り抜き利用"
+
+# 必須ルール
+mandatory_rules:
+  - "切り抜き許可channel以外の動画は不可（コラボでも他ch側はNG）"
+  - "概要欄に元ネタYouTube URL必須（漏れは許可剥奪リスク）"
+  - "ヒカル本人の声を使う（VOICEVOXナレ無し）"
+  - "尺は30-60秒推奨、最大75秒"
+
+# 実績キャラ（hit_rate = 競合分析v3より）
+characters:
+  tiers:
+    S:
+      - name: ヒカル
+        hit_rate: 100
+        notes: "主人公・全動画で登場"
+      - name: カノックスター
+        hit_rate: 60
+        notes: "220万登録・コラボ素材として有効・h-short許可ch"
+    A:
+      - name: 加藤神楽
+        hit_rate: 80
+        notes: "現パートナー・最強テーマ"
+      - name: Hakuくん
+        hit_rate: 75
+        notes: "息子・ファミリー系で爆伸び"
+      - name: カジサック
+        hit_rate: 70
+        notes: "大物コラボ最強"
+    B:
+      - name: 進撃のノア
+        hit_rate: 50
+        notes: "元嫁・離婚後の毒舌系は強い"
+      - name: 飯田祐基
+        hit_rate: 45
+        notes: "旧相棒・倒産/結婚系で再注目"
+      - name: 相馬トランジスタ
+        hit_rate: 40
+      - name: エミリン
+        hit_rate: 40
+      - name: 名人
+        hit_rate: 35
+
+# フレーズスキャン用キーワード（h-short特化）
+keywords:
+  emotion:
+    - キレる
+    - 断言
+    - 縁を切
+    - ブチギレ
+    - 激怒
+    - 焦る
+    - 腰を抜か
+    - デレデレ
+    - 即答
+    - 認める
+    - 大喜び
+    - 衝撃
+    - 凄さ
+    - 波乱万丈
+    - ジェットコースター
+  expose:
+    - 暴露
+    - 告白
+    - 同じ動画
+    - ヤラセ
+    - 倒産
+    - 借金
+    - 赤字
+    - 債務超過
+    - 離婚
+    - 結婚発表
+    - オープンマリッジ
+  hot_themes:
+    - 結婚
+    - 離婚
+    - 子供
+    - 嫁
+    - 家族
+    - お金
+    - 倒産
+    - スキャンダル
+    - 大物コラボ
+    - 美人女医
+    - 年収
+
+# 勝ちパターン (競合分析v3より・5系統)
+patterns:
+  - name: "対人衝突キレ・断言系（最強・平均227万view）"
+    keywords: ["キレる", "断言", "縁を切", "ブチギレ"]
+    example: "門りょうに素でキレるヒカル（4.1M view）"
+  - name: "離婚ドラマ・元嫁毒舌系（平均72万view）"
+    keywords: ["離婚", "ノア", "毒舌", "オープンマリッジ"]
+  - name: "神楽×Haku-kun×カジサック家族系（平均60万view）"
+    keywords: ["神楽", "Haku", "カジサック", "息子", "嫁"]
+  - name: "タレント×ガジェット・リアクション系（平均81万view）"
+    keywords: ["エミリン", "リアクション", "電気バリブラシ", "実験"]
+  - name: "暴露・下剋上・告白系（平均110万view・単発ホームラン）"
+    keywords: ["ヤラセ", "暴露", "告白", "下剋上", "風俗"]
+
+# タイトル・サムネ法則
+title:
+  hooks:
+    S_tier:
+      - "「」セリフ引用"
+      - "暴露"
+      - "実は"
+      - "同じ動画だとは"
+    A_tier:
+      - "ブチギレ"
+      - "断言"
+      - "縁を切"
+      - "即答"
+      - "大喜び"
+    B_tier:
+      - "波乱万丈"
+      - "凄さ"
+      - "ヒカル様"
+  rules:
+    - "進撃のヒカル方式の主語+動詞末尾構造を使え — 「○○に[副詞][動詞]るヒカル」"
+    - "動詞は強い感情を表す本動詞: キレる/断言する/縁を切る/腰を抜かす/焦る"
+    - "セリフ引用「」 を冒頭に置くと#1ヒット率高い"
+    - "ヒカル本人を主語にする・他人は対象として描写"
+    - "結論を出さない（「効かない」「完全論破」はNG）"
+
+# ヒカル形式タイトルバー（2-3行）
+hshort_title:
+  rules:
+    - "1行7文字前後（最大10文字）"
+    - "2行構成が基本、3行は情報量必要な時のみ"
+    - "1行目は引用フレーズ or 状況、2行目はパンチライン"
+  examples:
+    - lines: ["倒産から結婚へ", "相手は美人女医"]
+      pattern: "コントラスト + 美人女医バズワード"
+    - lines: ["「同じ動画と思えない」", "倒産から一転結婚発表"]
+      pattern: "セリフ引用 + 状況"
+    - lines: ["門りょうにブチギレ", "ちょっと怖いヒカル"]
+      pattern: "対人衝突主軸"
+
+# ランク基準
+ranking:
+  weights:
+    content: 50
+    character: 30
+    theme: 15
+    format: 5
+  thresholds:
+    S: "100万+（対人衝突キレ系・暴露系の決定的瞬間）"
+    A: "30-100万（神楽×Haku系・カジサック系の安定ヒット）"
+    B: "10-30万（ノア毒舌・タレントリアクション系）"
+    pass: "10万未満（許可ch外・尺超過・タイトル定型外）"
+
+# 読み込むコンテキストファイル
+context_files: []
+
+# YouTube概要欄テンプレ（許可根拠リスト）
+description:
+  permission_refs:
+    - name: "ヒカル"
+      url: "https://www.youtube.com/watch?v=7QdiPnJkxLg&t=479s"
+      scene: "31:36～"
+    - name: "カノックスター"
+      url: "https://www.youtube.com/watch?v=c8Zv0cc2dzM"
+      scene: ""
